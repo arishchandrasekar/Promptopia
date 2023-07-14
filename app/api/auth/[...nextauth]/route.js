@@ -1,4 +1,4 @@
-import NextAuth from "next-auth/next";
+import NextAuth from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
 
 import { connectDB } from "@utils/database";
@@ -38,6 +38,7 @@ const handler = NextAuth({
             image: profile.picture,
           });
         }
+        return true;
       } catch (error) {
         console.log(error);
       }
